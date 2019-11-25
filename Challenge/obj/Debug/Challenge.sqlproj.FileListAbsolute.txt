@@ -1,0 +1,5 @@
+C:\Users\Owner\source\repos\Challenge\bin\Debug\Challenge.dacpac
+C:\Users\Owner\source\repos\Challenge\bin\Debug\Challenge.dll
+C:\Users\Owner\source\repos\Challenge\bin\Debug\Challenge.pdb
+C:\Users\Owner\source\repos\Challenge\obj\Debug\Challenge.dll
+C:\Users\Owner\source\repos\Challenge\obj\Debug\Challenge.pdb

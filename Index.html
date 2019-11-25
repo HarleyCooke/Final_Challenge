@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="Main.css">
+    <script type="text/javascript" src="./Main.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        </a>
+        <div class="navbar-item">
+            <div class="buttons" style="float: right; display: none;">
+                <a class="button is-primary" onclick="CreateOpen();">
+                    <strong>Create Coffee Date</strong>
+                </a>
+                <a class="button is-primary" onclick="MyDates();">
+                    <strong>Coffee Dates</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<body onload="logIn();">
+    <div class="container" id="container">
+        <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-success" id="User" style="width: 50%" type="text" placeholder="Username input"
+                    value="User">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+                <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-danger" id="Pass" style="width: 50%" type="text" placeholder="Password input"
+                    value="Password">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-link" onclick="submitCheck();">Log In</button>
+                <button class="button is-link" onclick="newUser();">Create New User</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="CofeeForm">
+        <div class="columns is-desktop">
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Create Coffee Date
+                        </p>
+                        <a href="#" class="card-header-icon" aria-label="more options">
+                            <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </header>
+                    <div class="content" style="padding: 5%">
+                            <div class="field">
+                                    <label class="label">Venue</label>
+                                    <div class="control">
+                                        <input class="input" id="Venue" type="text" placeholder="Text input">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Date</label>
+                                    <div class="control">
+                                        <input class="input" id="Date" style="width: 40%" type="Date" placeholder="Text input">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Time</label>
+                                    <div class="control">
+                                        <input class="input" id="Time" style="width: 20%" type="time" placeholder="Text input">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Cost</label>
+                                    <div class="control">
+                                        <input class="input" id="Cost" style="width: 20%" type="number" placeholder="$">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Member</label>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select id="select"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>
+                    <footer class="card-footer">
+                        <a href="#" onclick="createCoffeeDate();" class="card-footer-item">Submit</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="coffeeCards">
+        <div class="columns is-desktop">
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Coffee Dates
+                        </p>
+                        <a href="#" class="card-header-icon" aria-label="more options">
+                            <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </header>
+                    <table id="posts">
+                        <thead>
+                            <tr>
+                                <th>Venue</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Cost</th>
+                                <th>MemberID</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item">Save</a>
+                        <a href="#" class="card-footer-item">Edit</a>
+                        <a href="#" class="card-footer-item">Delete</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<html>

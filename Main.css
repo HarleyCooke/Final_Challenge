@@ -1,0 +1,17 @@
+body {
+    background-color: dimgrey;
+}
+
+#container {
+    padding: 5%;
+}
+
+#CofeeForm {
+    padding: 15%;
+    display: none;
+}
+
+#coffeeCards {
+    padding: 15%;
+    display: none;
+}

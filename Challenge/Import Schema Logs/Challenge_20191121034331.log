@@ -1,0 +1,83 @@
+21/11/2019 2:43:31 PM	This log contains information about the import schema operation into project 'Challenge' on computer 'LAPTOP-9IBK9D66' by user 'Owner'.
+21/11/2019 2:43:31 PM	Import of database schema has started.
+21/11/2019 2:43:34 PM	Gathering logins
+21/11/2019 2:44:36 PM	Gathering database credentials
+21/11/2019 2:44:36 PM	Gathering database options
+21/11/2019 2:44:36 PM	Gathering generic database scoped configuration option
+21/11/2019 2:44:36 PM	Gathering users
+21/11/2019 2:44:36 PM	Gathering roles
+21/11/2019 2:44:36 PM	Gathering application roles
+21/11/2019 2:44:36 PM	Gathering role memberships
+21/11/2019 2:44:36 PM	Gathering filegroups
+21/11/2019 2:44:36 PM	Gathering full-text catalogs
+21/11/2019 2:44:36 PM	Gathering assemblies
+21/11/2019 2:44:36 PM	Gathering certificates
+21/11/2019 2:44:36 PM	Gathering symmetric keys
+21/11/2019 2:44:36 PM	Gathering encrypted symmetric keys
+21/11/2019 2:44:36 PM	Gathering schemas
+21/11/2019 2:44:36 PM	Gathering XML schema collections
+21/11/2019 2:44:36 PM	Gathering user-defined data types
+21/11/2019 2:44:36 PM	Gathering user-defined types
+21/11/2019 2:44:36 PM	Gathering table types
+21/11/2019 2:44:36 PM	Gathering unique keys for table types
+21/11/2019 2:44:36 PM	Gathering primary keys for table types
+21/11/2019 2:44:36 PM	Gathering indexes for table types
+21/11/2019 2:44:36 PM	Gathering check constraints for table types
+21/11/2019 2:44:36 PM	Gathering default constraints for table types
+21/11/2019 2:44:36 PM	Gathering partition functions
+21/11/2019 2:44:37 PM	Gathering partition schemes
+21/11/2019 2:44:37 PM	Gathering functions
+21/11/2019 2:44:37 PM	Gathering encrypted functions
+21/11/2019 2:44:37 PM	Gathering aggregates
+21/11/2019 2:44:37 PM	Gathering procedures
+21/11/2019 2:44:37 PM	Gathering encrypted procedures
+21/11/2019 2:44:37 PM	Gathering tables
+21/11/2019 2:44:37 PM	Gathering primary keys
+21/11/2019 2:44:37 PM	Gathering unique constraints
+21/11/2019 2:44:37 PM	Gathering foreign keys
+21/11/2019 2:44:37 PM	Gathering default constraints
+21/11/2019 2:44:37 PM	Gathering check constraints
+21/11/2019 2:44:37 PM	Gathering views
+21/11/2019 2:44:37 PM	Gathering encrypted views
+21/11/2019 2:44:37 PM	Gathering indexes
+21/11/2019 2:44:37 PM	Gathering statistics
+21/11/2019 2:44:37 PM	Gathering full-text index stoplists
+21/11/2019 2:44:37 PM	Gathering search property lists
+21/11/2019 2:44:37 PM	Gathering search properties
+21/11/2019 2:44:37 PM	Gathering full-text indexes
+21/11/2019 2:44:37 PM	Gathering column store indexes
+21/11/2019 2:44:37 PM	Gathering spatial indexes
+21/11/2019 2:44:37 PM	Gathering XML indexes
+21/11/2019 2:44:37 PM	Gathering Selective XML indexes
+21/11/2019 2:44:37 PM	Gathering encrypted triggers
+21/11/2019 2:44:37 PM	Gathering triggers
+21/11/2019 2:44:37 PM	Gathering encrypted and clr ddl triggers
+21/11/2019 2:44:37 PM	Gathering ddl triggers
+21/11/2019 2:44:37 PM	Creating edge constraints
+21/11/2019 2:44:37 PM	Gathering synonyms
+21/11/2019 2:44:37 PM	Gathering defaults
+21/11/2019 2:44:37 PM	Gathering data constraint uddt bindings
+21/11/2019 2:44:37 PM	Gathering rules
+21/11/2019 2:44:37 PM	Gathering data constraint uddt bindings
+21/11/2019 2:44:37 PM	Gathering message types
+21/11/2019 2:44:37 PM	Gathering queues
+21/11/2019 2:44:37 PM	Gathering contracts
+21/11/2019 2:44:37 PM	Gathering services
+21/11/2019 2:44:37 PM	Gathering event notifications
+21/11/2019 2:44:37 PM	Gathering remote service bindings
+21/11/2019 2:44:37 PM	Gathering broker priorities
+21/11/2019 2:44:37 PM	Gathering signatures
+21/11/2019 2:44:37 PM	Gathering data compression options
+21/11/2019 2:44:37 PM	Gathering sequence types
+21/11/2019 2:44:37 PM	Gathering security policies
+21/11/2019 2:44:37 PM	Gather column encryption keys
+21/11/2019 2:44:37 PM	Gathering column master keys
+21/11/2019 2:44:37 PM	Gathering external data sources
+21/11/2019 2:44:38 PM	Gathering external tables
+21/11/2019 2:44:38 PM	Gathering extended properties
+21/11/2019 2:44:39 PM	Gathering logins
+21/11/2019 2:44:39 PM	Scanning project for duplicate elements
+21/11/2019 2:44:39 PM	Finished duplicate element processing
+21/11/2019 2:44:39 PM	Finished importing database.
+21/11/2019 2:44:39 PM	A summary of the import was saved to the following location: C:\Users\Owner\source\repos\Challenge\Import Schema Logs\Challenge_20191121034331.log
+21/11/2019 2:44:39 PM	Click Finish to continue...
