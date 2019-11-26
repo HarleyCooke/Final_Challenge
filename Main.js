@@ -4,6 +4,11 @@ var UserCheck = [];
 var MemberList = {};
 var currentUser = '';
 var CoffeeDatesList = [];
+var Details = [];
+var date;
+var time;
+var Venue;
+var id;
 
 function logIn() {
     $('#container').css("display", 'block');
@@ -27,10 +32,10 @@ function CreateOpen() {
     MemberList = [];
     $('#CofeeForm').css("display", 'block');
     $('#coffeeCards').css("display", 'none');
-    fillMemberList();
+    // fillMemberList();
 }
 
-function MyDates() {
+function MyGames() {
     $('#coffeeCards').css("display", 'block');
     $('#CofeeForm').css("display", 'none');
     getCoffeeDates();
@@ -69,22 +74,91 @@ function newUser() {
     }
 }
 
+function addCost() {
+    date = '';
+    time = '';
+    Venue = '';
+    id = '';
+    MemberList = [];
+    fillMemberList2();
+
+    $('#CofeeFormUpdate').css("display", 'block');
+    var oTable = document.getElementById('posts');
+    var rowLength = oTable.rows.length;  
+    for (i = 1; i < rowLength; i++){
+       var oCells = oTable.rows.item(i).cells;
+       var cellLength = oCells.length;
+      for(var j = 0; j < cellLength; j++){
+              var cellVal = oCells.item(j).innerHTML;
+              Details.push(cellVal);
+           }
+    }
+
+    console.log(Details);
+    id = Details[0];
+    Venue = Details[1];
+    date = Details[2];
+    time = Details[3];
+
+}
+
+function deleteGame() {
+    id = '';
+    var oTable = document.getElementById('posts');
+    var rowLength = oTable.rows.length;  
+    for (i = 1; i < rowLength; i++){
+       var oCells = oTable.rows.item(i).cells;
+       var cellLength = oCells.length;
+      for(var j = 0; j < cellLength; j++){
+              var cellVal = oCells.item(j).innerHTML;
+              Details.push(cellVal);
+           }
+    }
+
+    id = Details[0];
+    $.ajax({
+        type: "DELETE",
+        url: `https://diplomaapi.azurewebsites.net/api/GameDetails/${id}`,
+        success: function(){
+           console.log("Sucess");
+    }
+});
+
+}
+
+
 
 function getCoffeeDates() {
     $('#posts').DataTable( {
         ajax: {
-            url: 'https://diplomaapi.azurewebsites.net/api/CoffeeDates',
+            url: 'https://diplomaapi.azurewebsites.net/api/GameDetails',
             "dataSrc": function (d) {       
                 return d
             }
         },
         columns:[
+            {data: 'GameDetailsID'},
             {data: 'Venue'},
             {data: 'Date'},
             {data: 'Time'},
+            {data: 'MemeberPaid'},
             {data: 'Cost'},
-            {data: 'MemberID'},
+            {
+                data: null,
+                render: function ( data, type, row ) {
+                    return '<button id="" class="button is-link" onclick="addCost();">Add Cost</button>';
+                }
+            },
+            {
+                data: null,
+                render: function ( data, type, row ) {
+                    return '<button id="" class="button is-link" onclick="deleteGame();">Delete</button>';
+                }
+            }
         ],
+        createdRow: function (data, row){
+            $(data).attr('GameDetailsID', row.ID)
+        },
         "aoColumnDefs": [ {
         }],
         "bLengthChange": false,
@@ -96,23 +170,53 @@ function getCoffeeDates() {
 }
 
 
-
-function createCoffeeDate() {
-    var CoffeeDate = [{}];
-    CoffeeDate.Venue = (document.getElementById('Venue').value)
-    CoffeeDate.Date = (document.getElementById('Date').value)
-    CoffeeDate.Time = (document.getElementById('Time').value)
-    CoffeeDate.Cost = (document.getElementById('Cost').value)
-    CoffeeDate.MemberID = (document.getElementById('select').value)
-    JSON.stringify(CoffeeDate);
-    console.log(CoffeeDate);
+function updateCoffeeDate() {
+    var GameDetails = [{}];
+    GameDetails.Venue = Venue
+    GameDetails.Date = date
+    GameDetails.Time = time
+    GameDetails.MemberPaid = (document.getElementById('selectUpdate').value)
+    GameDetails.Cost = (document.getElementById('CostUpdate').value)
+    JSON.stringify(GameDetails);
+    console.log(GameDetails);
 
     $.ajax({
         type: "POST",
-        url: "https://diplomaapi.azurewebsites.net/api/CoffeeDates",
+        dataType: 'json',
+        url: `https://diplomaapi.azurewebsites.net/api/GameDetails/${id}`,
+        headers: {"X-HTTP-Method-Override": "PUT"},
+        data: {Venue: GameDetails.Venue, Date: GameDetails.Date, Time: GameDetails.Time, MemeberPaid: GameDetails.MemberPaid,
+               Cost: GameDetails.Cost},
+        success: function(data){
+           console.log("Sucess" + data);
+    }
+});
+$.ajax({
+    type: "DELETE",
+    url: `https://diplomaapi.azurewebsites.net/api/GameDetails/${id}`,
+    success: function(){
+       console.log("Sucess");
+}
+});
+
+}
+
+function createCoffeeDate() {
+    var GameDetails = [{}];
+    GameDetails.Venue = (document.getElementById('Venue').value)
+    GameDetails.Date = (document.getElementById('Date').value)
+    GameDetails.Time = (document.getElementById('Time').value)
+    GameDetails.Cost = '';
+    GameDetails.MemberPaid = ''
+    JSON.stringify(GameDetails);
+    console.log(GameDetails);
+
+    $.ajax({
+        type: "POST",
+        url: "https://diplomaapi.azurewebsites.net/api/GameDetails",
         cache: false,
-        data: {Venue: CoffeeDate.Venue, Date: CoffeeDate.Date, Time: CoffeeDate.Time, Cost: CoffeeDate.Cost,
-               MemberID: CoffeeDate.MemberID},
+        data: {Venue: GameDetails.Venue, Date: GameDetails.Date, Time: GameDetails.Time, MemeberPaid: GameDetails.MemberPaid,
+               Cost: GameDetails.Cost},
         success: function(data){
            console.log("Sucess" + data);
     }
@@ -121,8 +225,15 @@ function createCoffeeDate() {
 }
 
 
-function fillMemberList() {
-    var select = document.getElementById('select');
+// function fillMemberList() {
+//     var select = document.getElementById('select');
+//     for(index in UserCheck) {
+//         select.options[select.options.length] = new Option(UserCheck[index], index);
+//     }
+// }
+
+function fillMemberList2() {
+    var select = document.getElementById('selectUpdate');
     for(index in UserCheck) {
         select.options[select.options.length] = new Option(UserCheck[index], index);
     }

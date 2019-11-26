@@ -11,7 +11,12 @@ body {
     display: none;
 }
 
-#coffeeCards {
+#CofeeFormUpdate {
     padding: 15%;
+    display: none;
+}
+
+#coffeeCards {
+    padding: 5%;
     display: none;
 }

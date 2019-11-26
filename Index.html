@@ -18,10 +18,10 @@
         <div class="navbar-item">
             <div class="buttons" style="float: right; display: none;">
                 <a class="button is-primary" onclick="CreateOpen();">
-                    <strong>Create Coffee Date</strong>
+                    <strong>Create New Game</strong>
                 </a>
-                <a class="button is-primary" onclick="MyDates();">
-                    <strong>Coffee Dates</strong>
+                <a class="button is-primary" onclick="MyGames();">
+                    <strong>View Games</strong>
                 </a>
             </div>
         </div>
@@ -69,7 +69,7 @@
                 <div class="card">
                     <header class="card-header">
                         <p class="card-header-title">
-                            Create Coffee Date
+                            Create Game Details
                         </p>
                         <a href="#" class="card-header-icon" aria-label="more options">
                             <span class="icon">
@@ -96,13 +96,7 @@
                                         <input class="input" id="Time" style="width: 20%" type="time" placeholder="Text input">
                                     </div>
                                 </div>
-                                <div class="field">
-                                    <label class="label">Cost</label>
-                                    <div class="control">
-                                        <input class="input" id="Cost" style="width: 20%" type="number" placeholder="$">
-                                    </div>
-                                </div>
-                                <div class="field">
+                                <!-- <div class="field">
                                     <label class="label">Member</label>
                                     <div class="control">
                                         <div class="select">
@@ -110,9 +104,70 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="field">
+                                    <label class="label">Cost</label>
+                                    <div class="control">
+                                        <input class="input" id="Cost" style="width: 20%" type="number" placeholder="$">
+                                    </div>
+                                </div> -->
                           </div>
                     <footer class="card-footer">
                         <a href="#" onclick="createCoffeeDate();" class="card-footer-item">Submit</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="CofeeFormUpdate">
+        <div class="columns is-desktop">
+            <div class="column">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Update Game Details
+                        </p>
+                        <a href="#" class="card-header-icon" aria-label="more options">
+                            <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </header>
+                    <div class="content" style="padding: 5%">
+                            <!-- <div class="field">
+                                    <label class="label">Venue</label>
+                                    <div class="control">
+                                        <input class="input" id="VenueUpdate" type="text" placeholder="Text input">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Date</label>
+                                    <div class="control">
+                                        <input class="input" id="DateUpdate" style="width: 40%" type="Date" placeholder="Text input">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Time</label>
+                                    <div class="control">
+                                        <input class="input" id="TimeUpdate" style="width: 20%" type="time" placeholder="Text input">
+                                    </div>
+                                </div> -->
+                                <div class="field">
+                                    <label class="label">Member</label>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select id="selectUpdate"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Cost</label>
+                                    <div class="control">
+                                        <input class="input" id="CostUpdate" style="width: 20%" type="number" placeholder="$">
+                                    </div>
+                                </div>
+                          </div>
+                    <footer class="card-footer">
+                        <a href="#" onclick="updateCoffeeDate();" class="card-footer-item">Submit</a>
                     </footer>
                 </div>
             </div>
@@ -124,7 +179,7 @@
                 <div class="card">
                     <header class="card-header">
                         <p class="card-header-title">
-                            Coffee Dates
+                            Game Details
                         </p>
                         <a href="#" class="card-header-icon" aria-label="more options">
                             <span class="icon">
@@ -135,19 +190,17 @@
                     <table id="posts">
                         <thead>
                             <tr>
+                                <th>GameID</th>
                                 <th>Venue</th>
                                 <th>Date</th>
                                 <th>Time</th>
+                                <th>MemberPaid</th>
                                 <th>Cost</th>
-                                <th>MemberID</th>
+                                <th>Add</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                     </table>
-                    <footer class="card-footer">
-                        <a href="#" class="card-footer-item">Save</a>
-                        <a href="#" class="card-footer-item">Edit</a>
-                        <a href="#" class="card-footer-item">Delete</a>
-                    </footer>
                 </div>
             </div>
         </div>
